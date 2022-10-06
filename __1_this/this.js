@@ -634,3 +634,5 @@ label19: {
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+// https://javascript.info/arrow-functions
