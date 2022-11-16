@@ -15,3 +15,11 @@ function Food(name, price) {
 
 console.log(new Food("cheese", 5).name); // expected output: "cheese"
 ```
+
+## Syntax
+
+```javascript
+call()
+call(thisArg)
+call(thisArg, arg1, /* ..., */ argN)
+```
