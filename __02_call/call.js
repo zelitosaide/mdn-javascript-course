@@ -21,7 +21,7 @@ label01: {
 }
 
 label02: {
-  const animails = [
+  const animals = [
     { species: "Lion", name: "King" },
     { species: "Whale", name: "Fail" },
   ];
@@ -33,8 +33,8 @@ label02: {
     this.print();
   }
 
-  for (let i = 0; i < animails.length; i++) {
-    assignPrintMethod.call(animails[i], i);
+  for (let i = 0; i < animals.length; i++) {
+    // assignPrintMethod.call(animails[i], i);
   }
 }
 
@@ -46,7 +46,7 @@ label03: {
       this.sleepDuration,
     ].join(" ");
 
-    console.log(reply);
+    // console.log(reply);
   }
 
   const obj = {
@@ -54,7 +54,7 @@ label03: {
     sleepDuration: "12 and 16 hours",
   };
 
-  greet.call(obj); // cats typically sleep between 12 and 16 hours
+  // greet.call(obj); // cats typically sleep between 12 and 16 hours
 }
 
 label04: {
@@ -65,7 +65,7 @@ label04: {
     console.log(`globProp value is ${this.globProp}`);
   }
 
-  display.call(); // Logs "globProp value is Wisen"
+  // display.call(); // Logs "globProp value is Wisen"
 }
 
 label05: {
@@ -77,7 +77,7 @@ label05: {
   }
 
   try {
-    display.call(); // throws TypeError: Cannot read the property of 'globalProp' of undefined
+    // display.call(); // throws TypeError: Cannot read the property of 'globalProp' of undefined
   } catch {
     console.log(new Error("Whoops!").message);
   }
@@ -96,8 +96,37 @@ label06: {
 
   const zelito = new Student("Zelito", 25, 1);
 
-  console.log({ ...zelito });
+  // console.log({ ...zelito });
 }
 
 label07: {
+  const animals = [
+    { species: "Lion", name: "king" },
+    { species: "Whale", name: "Fail" },
+  ];
+
+  function print() {
+    console.log(this.name);
+  }
+
+  for (const animal of animals) {
+    print.call(animal);
+  }
+}
+
+label08: {
+  const animals = [
+    { species: "Lion", name: "king" },
+    { species: "Whale", name: "Fail" },
+  ];
+
+  function print() {
+    console.log(this.name);
+  }
+
+  for (const animal of animals) {
+    animal.print = print;
+  }
+
+  animals[0].print();
 }
