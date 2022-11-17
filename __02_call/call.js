@@ -110,7 +110,7 @@ label07: {
   }
 
   for (const animal of animals) {
-    print.call(animal);
+    // print.call(animal);
   }
 }
 
@@ -127,6 +127,26 @@ label08: {
   for (const animal of animals) {
     animal.print = print;
   }
+  // animals[0].print();
+}
 
-  animals[0].print();
+label09: {
+  const animals = [
+    { species: "Lion", name: "king" },
+    { species: "Whale", name: "Fail" },
+  ];
+
+  function assignPrintMethod() {
+    this.print = function () {
+      console.log(this);
+    };
+  }
+
+  for (const animal of animals) {
+    assignPrintMethod.call(animal);
+  }
+
+  for (const animal of animals) {
+    animal.print();
+  }
 }
