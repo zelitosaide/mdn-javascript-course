@@ -67,3 +67,14 @@ label04: {
 
   display.call(); // Logs "globProp value is Wisen"
 }
+
+label05: {
+  var globalProp = "Wisen";
+
+  function display() {
+    "use strict";
+    console.log(`globalProp value is ${this.globalProp}`);
+  }
+
+  display.call(); // throws TypeError: Cannot read the property of 'globalProp' of undefined
+}
