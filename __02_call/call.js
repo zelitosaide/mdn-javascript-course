@@ -150,3 +150,27 @@ label09: {
     animal.print();
   }
 }
+
+label10: {
+  const greet = function () {
+    console.log(`Hello ${this.name}`);
+  };
+
+  greet.call({ name: "Zelito" });
+}
+
+label11: {
+  const greet = function (msg) {
+    console.log(`${msg} ${this.name}`);
+  };
+
+  greet.call({ name: "Joana" }, "Hello");
+}
+
+label12: {
+  const greet = function (...msg) {
+    console.log(`${msg.join(" ")} ${this.name}`);
+  };
+
+  greet.call({ name: "Joana" }, "Hello", "Hi");
+}
