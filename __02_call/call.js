@@ -76,5 +76,28 @@ label05: {
     console.log(`globalProp value is ${this.globalProp}`);
   }
 
-  display.call(); // throws TypeError: Cannot read the property of 'globalProp' of undefined
+  try {
+    display.call(); // throws TypeError: Cannot read the property of 'globalProp' of undefined
+  } catch {
+    console.log(new Error("Whoops!").message);
+  }
+}
+
+label06: {
+  function Person(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  function Student(name, age, average) {
+    Person.call(this, name, age);
+    this.average = average;
+  }
+
+  const zelito = new Student("Zelito", 25, 1);
+
+  console.log({ ...zelito });
+}
+
+label07: {
 }
