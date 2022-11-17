@@ -23,3 +23,8 @@ call()
 call(thisArg)
 call(thisArg, arg1, /* ..., */ argN)
 ```
+
+### Parameters
+
+`thisArg`
+

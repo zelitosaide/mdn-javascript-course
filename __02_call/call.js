@@ -9,6 +9,31 @@ label01: {
     this.category = "food";
   }
 
-  console.log(new Product("cheese", 10));
-  console.log(new Food("cheese", 10));
+  function Toy(name, price) {
+    Product.call(this, name, price);
+    this.category = "toy";
+  }
+
+  const cheese = new Food("feta", 5);
+  const fun = new Toy("robot", 40);
+
+  // console.log(cheese, fun);
+}
+
+label02: {
+  const animails = [
+    { species: "Lion", name: "King" },
+    { species: "Whale", name: "Fail" },
+  ];
+
+  function assignPrintMethod(i) {
+    this.print = function () {
+      console.log(`#${i} ${this.species}: ${this.name}`);
+    };
+    this.print();
+  }
+
+  for (let i = 0; i < animails.length; i++) {
+    assignPrintMethod.call(animails[i], i);
+  }
 }
