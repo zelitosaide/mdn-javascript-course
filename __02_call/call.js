@@ -56,3 +56,14 @@ label03: {
 
   greet.call(obj); // cats typically sleep between 12 and 16 hours
 }
+
+label04: {
+  var globProp = "Wisen";
+  // globProp = "Wisen";
+
+  function display() {
+    console.log(`globProp value is ${this.globProp}`);
+  }
+
+  display.call(); // Logs "globProp value is Wisen"
+}
